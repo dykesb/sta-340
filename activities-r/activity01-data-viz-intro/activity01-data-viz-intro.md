@@ -1,4 +1,4 @@
-Activity 1
+Activity 1 - Getting Started with Data Visualization in R
 ================
 
 #### Objectives
@@ -126,7 +126,7 @@ p
     **Enter** together on your keyboard
   - Verify that you get an image similar to…
 
-![](lab01-data-viz-intro_files/figure-gfm/gapminder-canvas-1.png)<!-- -->
+![](activity01-data-viz-intro_files/figure-gfm/gapminder-canvas-1.png)<!-- -->
 
 A lot to unpack here, but some of this should be familiar to you from
 your Class Prep. Looking at the `ggplot(...)` portion, we are telling
@@ -186,7 +186,7 @@ p <- p + scale_x_log10()
 `geom_point()`, and the `color` mapping option of `aes()` within your
 geom, reproduce this plot:
 
-![](lab01-data-viz-intro_files/figure-gfm/scatterplot-challenge-1.png)<!-- -->
+![](activity01-data-viz-intro_files/figure-gfm/scatterplot-challenge-1.png)<!-- -->
 
 **STOP**
 
@@ -250,7 +250,7 @@ A better way to view this might be to do the following.
 s + geom_jitter(position = position_jitter(width = 0.1, height = 0), alpha = (1/3))
 ```
 
-![](lab01-data-viz-intro_files/figure-gfm/stripplot-1.png)<!-- -->
+![](activity01-data-viz-intro_files/figure-gfm/stripplot-1.png)<!-- -->
 
 13. Notice that `position_jitter()` was instructed not to provide any
     vertical jitter (i.e., `height = 0`). Why do you think I chose to do
@@ -352,7 +352,7 @@ Density plots are a form or smoothed histograms. Using your `h` canvas,
 the `geom_density()` layer, and the work we’ve done this far, recreate
 the following plot.
 
-![](lab01-data-viz-intro_files/figure-gfm/histogram-challenge-1.png)<!-- -->
+![](activity01-data-viz-intro_files/figure-gfm/histogram-challenge-1.png)<!-- -->
 
 **STOP**
 
