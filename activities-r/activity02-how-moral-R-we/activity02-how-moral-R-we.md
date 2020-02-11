@@ -121,8 +121,9 @@ you are more than welcome to also include in yours for reference.
 
 ``` r
 wallet %>% 
-  count(Moral, Wallet) %>% 
-  mutate(percent = n / sum(n)*100) %>% 
+  group_by(Moral, Wallet) %>% 
+  summarize(n = n()) %>% 
+  mutate(percent = n / sum(n) * 100) %>% 
   pivot_wider(-n, names_from = Moral, values_from = percent)
 ```
 
@@ -133,8 +134,9 @@ it line-by-line.
 
 ``` r
 wallet %>% 
-  count(Moral, Wallet) %>% 
-  mutate(percent = n / sum(n)*100) %>% 
+  group_by(Moral, Wallet) %>% 
+  summarize(n = n()) %>% 
+  mutate(percent = n / sum(n) * 100) %>% 
   ggplot(mapping = aes(x = Moral, y = percent, fill = Wallet)) +
   geom_bar(stat = "identity", position = "dodge")
 ```
@@ -164,10 +166,11 @@ discuss the exploratory analysis in your write-up. You do not need to
 include the chi-square test results, but should discuss them. This will
 be uploaded to your Teams Google Site. I expect about one page.
 
-**Note**: I only expect you to make use of the Form and Moral variables.
-You might be interested in how this particular class responded to these
-survey questions, but I expect you to analyze all of the data, lumping
-all the classes together.
+**Note**: We did the above steps using `Wallet` and `Moral`, but I
+expect you to make use of the variables `Form` and `Moral`. You might be
+interested in how this particular class responded to these survey
+questions, but I expect you to analyze all of the data, lumping all the
+classes together.
 
 2.  Summarize the survey results using the most appropriate descriptive
     statistics. Discuss this in context relative to your answer for \#1.
